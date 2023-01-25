@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    {%for a in blogs%}
+    <div>
+        <h1>정소현 바보</h1>
+        <h2>{{a.title}}</h2>
+        <h4>{{a.pub_date}}</h4>
+        <h4>{{a.author}}</h4>
+        <!-- <p>{{a.body}}  </p> -->
+        <p class="bodystyle">{{a.body}}</p>
+        {% if a.image %}
+        <p><img src="{{ a.image.url }}" alt="anna"></p>
+        {% endif %}
+    </div>
+    {%endfor%}
+</body>
+</html>
