@@ -14,16 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from blog import views
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.blog_views, name='blog_views'),
-    path('<str:id>', views.detail, name='detail'),
-    path('new/', views.new, name='new'),
-    path('create/', views.create, name='create')
+    path('blog/', include('blog.urls')), # blog app에 urls를 새로 만들어준 다음에 include를 사용해서 보기 쉽게 만들어준다.
+    path('account/', include('account.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
  

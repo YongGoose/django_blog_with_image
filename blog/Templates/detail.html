@@ -6,7 +6,11 @@
     <h5>작성자 : {{ blog.author }}</h5>
     <h5>게시일 : {{ blog.pub_date }}</h5>
     <hr>
+    {% if blog.image %}
     <p><img src=" {{ blog.image.url }}" width="200" height="200" alt="X"></p>
-    {{ blog.body }}
+    {% endif %}
+    <p>{{ blog.body }}</p>
+    <a href="{% url 'update' blog.id %}"><input type="button" value="수정하기"></a>
+    <a href="{% url 'delete' blog.id %}"><input type="button" value="삭제하기"></a>
 {% endblock %} 
 <!-- 중괄호와 %사이에 공간이 있으면 안된다. block을 사용하면 항상 endblock을 해줘야한다. -->
