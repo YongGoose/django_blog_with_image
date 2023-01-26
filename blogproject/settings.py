@@ -130,6 +130,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = '/blog/'
+LOGOUT_REDIRECT_URL = '/account/'
 
 
 # config 디렉터리의 settings.py 파일에 Path, os를 임포트하고 미디어 경로를 추가한다.
