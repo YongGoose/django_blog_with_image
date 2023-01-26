@@ -1,3 +1,7 @@
 .bodystyle{
     background-color: yellow;
 }
+body *{
+    text-align: left;
+    margin-left: 100px;
+}

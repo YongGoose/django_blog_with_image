@@ -20,10 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.blog_views, name='blog_views')
+    path('',views.blog_views, name='blog_views'),
+    path('<str:id>', views.detail, name='detail'),
+    path('new/', views.new, name='new'),
+    path('create/', views.create, name='create')
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
-
+ 
 
 # static과 settings를 임포트해주고, 기존의 urlpatterns에 settings.py에서 정의한 미디어 경로를 추가한다.
 
