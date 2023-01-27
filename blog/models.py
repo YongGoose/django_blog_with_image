@@ -9,3 +9,12 @@ class BLog(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    content = models.CharField(max_length=200)
+    author = models.CharField(max_length=50)
+    blog = models.ForeignKey(BLog,on_delete=models.CASCADE)
+    create_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.content
