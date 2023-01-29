@@ -46,9 +46,11 @@
             <li>
               <a href="{% url 'blog_views' %}"class="nav-link px-2 text-white">Home</a>
             </li>
+            {% if user.is_authenticated %}
             <li>
               <a href="{% url 'post' %}" class="nav-link px-2 text-white">글쓰기</a>
             </li>
+            {% endif %}
             <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
             <!-- <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li> -->
             <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
