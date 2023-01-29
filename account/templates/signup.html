@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+        @font-face {
+        font-family: 'MapoFlowerIsland';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        .all{
+            font-family: 'MapoFlowerIsland';
+            text-decoration: none;
+            align-items: center;
+            height: 100%;
+            line-height: 100%;
+            text-align: center;
+            margin-top: 15%;
+        }
+        .loginbox, .loginbtn{
+            height: 30px;
+            width: 300px;
+            margin: 5px;
+            font-size: 17px;
+            align-items: center;
+        }
+
+        .loginbtn{
+            background-color:lightseagreen;
+            color: white;
+            border: 0;
+            outline: 0;
+        }
+
+        </style>
+</head>
+<body>
+    <div class="all">
+        <form method="POST" action="{% url 'users:signup' %}">
+            {% csrf_token %}
+            <p>username</p>
+            <input class="loginbox" type="text" name="username">
+            <br>
+            <p>password</p>
+            <input class="loginbox" type="text" name="password">
+            <br>
+            <p>confirm</p>
+            <input class="loginbox" type="text" name="confirm">
+            <br>
+            <input class="loginbtn" type="submit" value="회원가입">
+        </form>        
+    </div>
+
+</body>
+</html>

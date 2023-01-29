@@ -4,7 +4,7 @@
 {% block content %}
 
 <h1>로그인</h1>
-<form method="post" action="{% url 'users:login' %}">
+<form method="POST" action="{% url 'users:login' %}">
   {% csrf_token %}
   {% include 'form_errors.html' %} <!-- 코드 추가 -->
 
@@ -14,7 +14,7 @@
   </div>
   <div>
     <label>비밀번호</label>
-    <input type="text" name="password" id="password">
+    <input type="password" name="password" id="password">
   </div>
   <button type="submit">로그인</button>
 </form>

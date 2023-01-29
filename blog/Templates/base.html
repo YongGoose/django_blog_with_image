@@ -73,7 +73,10 @@
           </form>
 
           <div class="text-end">
-
+            {% if user.is_authenticated %}
+            {% else %}
+            <a href="{% url 'users:signup' %}" class="nav-link px-2 text-white">회원가입</a>
+            {% endif %}
             <button type="button" class="btn btn-warning">Sign-up</button>
           </div>
         </div>
