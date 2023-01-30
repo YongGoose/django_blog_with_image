@@ -32,6 +32,7 @@ def login(request):
         
         if user is not None:
             auth.login(request, user)
+            print("12345")
             return redirect('blog_views')
         else:
             return render(request, 'login.html', {'error' : 'username or password is incorrect.'})
