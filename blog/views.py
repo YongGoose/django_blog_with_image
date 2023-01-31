@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.utils import timezone
 # Create your views here.
+def main(request):
+    return render(request, 'index.html')
+
 def blog_views(request):
     blogs = BLog.objects.all()
     # return render(request, 'home.html', {'blogs':blogs})

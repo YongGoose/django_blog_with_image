@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')), # blog app에 urls를 새로 만들어준 다음에 include를 사용해서 보기 쉽게 만들어준다.
     path('account/', include('account.urls')),
+    path('', views.main, name="main")
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
  
