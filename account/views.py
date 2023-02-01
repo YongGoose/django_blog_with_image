@@ -38,3 +38,8 @@ def login(request):
             return render(request, 'login.html', {'error' : 'username or password is incorrect.'})
     else:
         return render(request, 'login.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('blog_views')
